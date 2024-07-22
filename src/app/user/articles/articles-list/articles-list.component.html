@@ -1,0 +1,7 @@
+<div>
+   <app-articles-card
+   *ngFor="let article of this.articlesService.getArticles() | async "
+   [article]="article"
+   >
+   </app-articles-card>
+</div>

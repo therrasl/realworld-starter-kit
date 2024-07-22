@@ -1,0 +1,41 @@
+header {
+  margin: 20px;
+}
+.logo-list{
+  display: flex;
+  align-items: center;
+}
+.header-list {
+  display: flex;
+  justify-content: space-around;
+}
+.header-logo {
+  color: rgb(109, 1, 1);
+  font-size: 30px;
+  margin-right: 20px;
+  font-weight: 700;
+  font-family: "Days One", sans-serif;
+}
+.header-section {
+  width: 100%;
+  height: 20vh;
+  background: rgb(236, 15, 4);
+  background: linear-gradient(
+    16deg,
+    rgba(236, 15, 4, 1) 36%,
+    rgba(140, 0, 194, 1) 97%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.angular-title {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
