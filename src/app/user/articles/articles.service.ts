@@ -7,8 +7,8 @@ import { Articles } from './model/articles';
 export class ArticlesService {
   private readonly http = inject(HttpClient);
 
-  getArticles(): Observable<Articles[]> {
-    return this.http.get<Articles[]>(
+  getArticles(): Observable<any> {
+    return this.http.get(
       'https://api.realworld.io/api/articles?limit=10&offset=0'
     );
   }

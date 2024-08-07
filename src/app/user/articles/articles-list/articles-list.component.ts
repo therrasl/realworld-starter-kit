@@ -2,27 +2,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnInit,
+
 } from '@angular/core';
 import { ArticlesService } from '../articles.service';
-import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { ArticlesCardComponent } from '../articles-card/articles-card.component';
-import { Articles } from '../model/articles';
+
 
 @Component({
   selector: 'app-articles-list',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe, ArticlesCardComponent, NgFor],
+  imports: [AsyncPipe, NgIf , NgFor , NgClass],
   templateUrl: './articles-list.component.html',
   styleUrl: './articles-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ArticlesListComponent implements OnInit {
+export class ArticlesListComponent  {
   articlesService = inject(ArticlesService);
-  articles$ : any
-
-  ngOnInit(): void {
-    this.articlesService.getArticles().subscribe( (res : Articles[]) => this.articles$ = res)
-    console.log(this.articles$)
-  }
+  public readonly articles$ = this.articlesService.getArticles()
 }

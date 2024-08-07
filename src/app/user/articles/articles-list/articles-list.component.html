@@ -1,7 +1,13 @@
-<div>
-   <app-articles-card
-   *ngFor="let article of articles$ | async"
-   [article]="article"
-   >
-   </app-articles-card>
-</div>
+<ng-container *ngIf="articles$ | async as articles">
+  <div *ngFor="let article of articles.articles">
+    <div style="display: flex; flex-direction: column;">
+      <h2>
+        {{article.title}}
+      </h2>
+      <div>
+        {{article.body}}
+      </div>
+    </div>
+  </div>
+  <h2>Всего статей: {{articles.articlesCount}}</h2>
+</ng-container>
