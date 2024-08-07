@@ -10,5 +10,5 @@ import { Articles } from '../model/articles';
   styleUrl: './articles-card.component.scss'
 })
 export class ArticlesCardComponent {
- @Input({required : true}) article ?: Articles
+ @Input({required : true}) article !: Articles
 }

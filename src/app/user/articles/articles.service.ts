@@ -5,7 +5,6 @@ import { Articles } from './model/articles';
 
 @Injectable({ providedIn: 'root' })
 export class ArticlesService {
-  
   private readonly http = inject(HttpClient);
 
   getArticles(): Observable<Articles[]> {
